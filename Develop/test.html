@@ -19,23 +19,38 @@
                 } 
 
                 else {
+                console.log(i)
                 
                 console.log("Length: " + passwordLength)
                 
                 
-                var passwordSpecial = confirm("Use special characters?")
-                console.log("Special Characters: " + passwordSpecial)
-                var passwordNumbers = confirm("Use numbers?")
-                console.log("Numbers: " + passwordNumbers)
-                var passwordUpper = confirm("Use uppercase characters?")
-                console.log("Uppercase: " + passwordUpper)
-                var passwordLower = confirm("Use lowercase characters?")
-                console.log("Lowercase: " + passwordLower)
-                i = i+1
+                // need to get back to this point if all are false
+                var passwordSpecial = confirm("Use special characters?");
+                console.log("Special Characters: " + passwordSpecial);
+                var passwordNumbers = confirm("Use numbers?");
+                console.log("Numbers: " + passwordNumbers);
+                var passwordUpper = confirm("Use uppercase characters?");
+                console.log("Uppercase: " + passwordUpper);
+                var passwordLower = confirm("Use lowercase characters?");
+                console.log("Lowercase: " + passwordLower);
+                i = i+1;
+                console.log(i);
                 }
-            // else {
-            //     alert("You broke it!")
-            // }
+
+                if (i > 0){
+                    if (passwordSpecial === false && 
+                        passwordNumbers === false &&
+                        passwordUpper === false &&
+                        passwordLower === false) {
+                        alert("You must select at least one kind of characters.")
+                        i = i-1
+                        }
+                    else {
+                        console.log("All good bro.")
+                    }
+                    
+                }
+
             }
     
 
