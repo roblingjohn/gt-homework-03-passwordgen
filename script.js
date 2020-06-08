@@ -1,24 +1,20 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword());
+// I couldn't get the querySelector or addEventListener to work, only the onclick in the html 
 
-// Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-  
-//   passwordText.value = password;}
-
-  function generatePassword() {
+// function that generates password 
+function generatePassword() {
     // start function 
     // ask character length 
     var goodLength = false
     var charGood = false
     for (i = 0; i < 2; i++) {   
         if (goodLength === false) {
-        var passwordLength = prompt("How many characters should your password be?")
+        var passwordLength = prompt("How many characters should your password be? (must be between 8 and 128)")
             // if the length is invalid:
             if (passwordLength < 8 || passwordLength > 128) {
                 var passwordLength = alert("Password must be between 8 and 128 characters.")
@@ -97,6 +93,7 @@ generateBtn.addEventListener("click", generatePassword());
                     };
                     console.log(passwordString);
 
+                    // puts password into text on page 
                     var passwordText = document.getElementById("password");
                     passwordText.value = passwordString
 
