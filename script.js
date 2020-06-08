@@ -1,12 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// Add event listener to generate button
+generateBtn.addEventListener("click", generatePassword());
 
-  passwordText.value = password;}
+// Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+  
+//   passwordText.value = password;}
 
   function generatePassword() {
     // start function 
@@ -81,7 +84,7 @@ function writePassword() {
                     }
                 
 
-                var passwordText = ""
+                var passwordString = ""
 
             // this randomizes the password 
                 for (j = 0; j < passwordLength; j++) {
@@ -89,10 +92,16 @@ function writePassword() {
                     var arraySelectOuter = Math.floor(Math.random() * passwordCharacters.length);
                     var arraySelectInner = Math.floor(Math.random() * (passwordCharacters[arraySelectOuter].length));
                     var newEntry = passwordCharacters[arraySelectOuter][arraySelectInner]
-                        passwordText = passwordText + newEntry;
+                        passwordString = passwordString + newEntry;
 
                     };
-                    console.log(passwordText)
+                    console.log(passwordString);
+
+                    var passwordText = document.getElementById("password");
+                    passwordText.value = passwordString
+
+
+                    // document.getElementById("password").innerHTML = passwordString
 
       // end function 
 }
@@ -100,5 +109,3 @@ function writePassword() {
 
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
