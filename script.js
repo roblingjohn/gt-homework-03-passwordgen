@@ -1,10 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+console.log(generateBtn)
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
-// I couldn't get the querySelector or addEventListener to work, only the onclick in the html 
 
 // function that generates password 
 function generatePassword() {
